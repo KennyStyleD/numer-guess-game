@@ -4,7 +4,7 @@ let resetButton = document.getElementById("reset-button");
 let resultArea = document.getElementById("result-area");
 let userInput = document.getElementById("user-input");
 let chanceArea = document.getElementById("chance-area");
-let chances= 5;
+let chances = 5;
 let gameOver = false;
 let history=[];
 
@@ -61,8 +61,12 @@ function reset(){
     userInput.value = "";
     resultArea.textContent = "다시 맞추기 게임 시작!"
     randomPickNum();
-    chances.value = 5;
+    playButton.disabled = false;
+   
+    chances = 5 ;
+    chanceArea.textContent = "남은 기회:5번";
+    history.splice(0,4);
+    return;
 }
-
 
 randomPickNum();
